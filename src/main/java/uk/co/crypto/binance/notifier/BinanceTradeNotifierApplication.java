@@ -16,9 +16,9 @@ public class BinanceTradeNotifierApplication {
   }
 
   @Bean
-  public JavaMailSender mailer(@Value("${sm://EMAIL_NOTIFICATION_HOST}") String host,
-      @Value("${sm://EMAIL_NOTIFICATION_FROM}") String from,
-      @Value("${sm://EMAIL_NOTIFICATION_PASSWORD}") String password) {
+  public JavaMailSender mailer(@Value("${EMAIL_NOTIFICATION_HOST}") String host,
+      @Value("${EMAIL_NOTIFICATION_FROM}") String from,
+      @Value("${EMAIL_NOTIFICATION_PASSWORD}") String password) {
     JavaMailSenderImpl mailSender = new JavaMailSenderImpl();
     mailSender.setHost(host);
     mailSender.setPort(587);

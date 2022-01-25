@@ -24,8 +24,8 @@ public class Binance implements Closeable {
 
   private final List<OrderTradeUpdateListener> listeners = new CopyOnWriteArrayList<>();
 
-  public Binance(@Value("${sm://BINANCE_READ_KEY}") String key,
-      @Value("${sm://BINANCE_READ_SECRET}") String secret) {
+  public Binance(@Value("${BINANCE_READ_KEY}") String key,
+      @Value("${BINANCE_READ_SECRET}") String secret) {
     factory = BinanceApiClientFactory.newInstance(key, secret, false, false);
     rest = factory.newRestClient();
     websocket = factory.newWebSocketClient();
