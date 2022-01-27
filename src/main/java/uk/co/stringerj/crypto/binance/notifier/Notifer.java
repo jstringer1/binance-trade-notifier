@@ -1,4 +1,4 @@
-package uk.co.crypto.binance.notifier;
+package uk.co.stringerj.crypto.binance.notifier;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

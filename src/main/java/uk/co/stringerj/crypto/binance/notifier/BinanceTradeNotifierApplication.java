@@ -1,4 +1,4 @@
-package uk.co.crypto.binance.notifier;
+package uk.co.stringerj.crypto.binance.notifier;
 
 import java.util.Properties;
 import org.springframework.beans.factory.annotation.Value;
