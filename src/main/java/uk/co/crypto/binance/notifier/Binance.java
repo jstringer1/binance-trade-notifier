@@ -4,6 +4,8 @@ import java.io.Closeable;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import com.binance.api.client.BinanceApiClientFactory;
@@ -15,6 +17,8 @@ import com.binance.api.client.domain.event.UserDataUpdateEvent.UserDataUpdateEve
 
 @Service
 public class Binance implements Closeable {
+
+  private static final Logger LOGGER = LoggerFactory.getLogger(Binance.class);
 
   private final BinanceApiClientFactory factory;
   private final BinanceApiRestClient rest;
@@ -42,6 +46,7 @@ public class Binance implements Closeable {
   }
 
   private void onUserDataUpdate(UserDataUpdateEvent event) {
+    LOGGER.info(event.toString());
     if (event.getEventType() == UserDataUpdateEventType.ORDER_TRADE_UPDATE)
       listeners.forEach(listener -> listener.onTradeUpdate(event.getOrderTradeUpdateEvent()));
   }
