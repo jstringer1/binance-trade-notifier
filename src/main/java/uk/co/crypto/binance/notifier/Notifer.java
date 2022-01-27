@@ -63,14 +63,14 @@ public class Notifer {
 
   private String getPrices(double price, boolean add) {
     StringBuilder sb = new StringBuilder().append("\n\n");
-    sb.append(String.format("00.2%% = %f", add ? price * 1.002 : price * 0.998));
-    sb.append(String.format("00.5%% = %f", add ? price * 1.005 : price * 0.995));
-    sb.append(String.format("01.0%% = %f", add ? price * 1.01 : price * 0.99));
-    sb.append(String.format("02.0%% = %f", add ? price * 1.02 : price * 0.98));
-    sb.append(String.format("03.0%% = %f", add ? price * 1.03 : price * 0.97));
-    sb.append(String.format("04.0%% = %f", add ? price * 1.04 : price * 0.96));
-    sb.append(String.format("05.0%% = %f", add ? price * 1.05 : price * 0.95));
-    sb.append(String.format("10.0%% = %f", add ? price * 1.1 : price * 0.9));
+    sb.append(String.format("00.2%% = %f\n", add ? price * 1.002 : price * 0.998));
+    sb.append(String.format("00.5%% = %f\n", add ? price * 1.005 : price * 0.995));
+    sb.append(String.format("01.0%% = %f\n", add ? price * 1.01 : price * 0.99));
+    sb.append(String.format("02.0%% = %f\n", add ? price * 1.02 : price * 0.98));
+    sb.append(String.format("03.0%% = %f\n", add ? price * 1.03 : price * 0.97));
+    sb.append(String.format("04.0%% = %f\n", add ? price * 1.04 : price * 0.96));
+    sb.append(String.format("05.0%% = %f\n", add ? price * 1.05 : price * 0.95));
+    sb.append(String.format("10.0%% = %f\n", add ? price * 1.1 : price * 0.9));
     return sb.toString();
   }
 
